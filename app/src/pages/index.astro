@@ -1,0 +1,46 @@
+---
+import '../styles/global.css';
+import Hero from '../components/home/Hero.astro';
+import Music from '../components/home/Music.astro';
+import About from '../components/home/About.astro';
+import Footer from '../components/Footer.astro';
+
+const title = 'ONE WEEK LEFT — Official Website';
+const description =
+  'ONE WEEK LEFT is a blues-rock project built on massive organic drums, deep bass, raw guitars and a warm, low-mid voice.';
+const canonical = 'https://oneweekleft.music/';
+const socialImage = 'https://oneweekleft.music/images/still-moving.png';
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#050505" />
+
+    <link rel="canonical" href={canonical} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="ONE WEEK LEFT" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={socialImage} />
+    <meta property="og:image:alt" content="STILL MOVING by ONE WEEK LEFT" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImage} />
+  </head>
+
+  <body>
+    <Hero />
+    <Music />
+    <About />
+    <Footer />
+  </body>
+</html>

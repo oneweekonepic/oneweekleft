@@ -1,0 +1,167 @@
+---
+import heroImage from '../../assets/images/hero.png';
+import { Image } from 'astro:assets';
+---
+
+<section class="hero">
+  <Image
+    src={heroImage}
+    alt=""
+    class="hero-image"
+    widths={[768, 1280, 1920]}
+    sizes="100vw"
+    format="webp"
+    quality={90}
+    loading="eager"
+  />
+
+  <div class="hero-shade"></div>
+
+  <header class="hero-header">
+    <a class="brand" href="/">
+      <span>ONE WEEK LEFT</span>
+      <span class="brand-line"></span>
+    </a>
+
+    <nav aria-label="Main navigation">
+      <a href="#music">MUSIC</a>
+      <a href="#about">ABOUT</a>
+    </nav>
+  </header>
+
+  <a class="listen" href="#music">
+    LISTEN
+    <span aria-hidden="true">↓</span>
+  </a>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    height: 100vh;
+    height: 100dvh;
+    min-height: 100vh;
+    overflow: hidden;
+    background: #000;
+  }
+
+  .hero-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .hero-shade {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(to bottom, rgba(0,0,0,.35) 0%, transparent 28%),
+      linear-gradient(to top, rgba(0,0,0,.35) 0%, transparent 25%);
+    pointer-events: none;
+  }
+
+  .hero-header {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 34px 44px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    box-sizing: border-box;
+  }
+
+  .brand {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 400;
+    letter-spacing: .28em;
+    white-space: nowrap;
+  }
+
+  .brand-line {
+    width: 42px;
+    height: 1px;
+    background: #d71920;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    font-size: 11px;
+    letter-spacing: .2em;
+  }
+
+  nav a {
+    color: rgba(255,255,255,.82);
+    text-decoration: none;
+  }
+
+  nav a:hover {
+    color: #fff;
+  }
+
+  .listen {
+    position: absolute;
+    z-index: 2;
+    bottom: 48px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255,255,255,.92);
+    text-decoration: none;
+    font-size: 10px;
+    letter-spacing: .28em;
+  }
+
+  .listen span {
+    font-size: 15px;
+    font-weight: 200;
+  }
+
+  @media (max-width: 700px) {
+    .hero {
+      min-height: 100svh;
+    }
+
+    .hero-header {
+      padding: 24px 20px;
+    }
+
+    .brand {
+      font-size: 12px;
+      letter-spacing: .22em;
+    }
+
+    nav {
+      gap: 12px;
+      font-size: 9px;
+      letter-spacing: .14em;
+    }
+
+    nav a {
+      display: inline;
+    }
+
+    .hero-image {
+      object-position: center;
+    }
+
+    .listen {
+      bottom: 25px;
+    }
+  }
+</style>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://oneweekleft.music/sitemap-index.xml

@@ -1,0 +1,85 @@
+<section id="about" class="about">
+  <div class="about-inner">
+    <p class="eyebrow">ABOUT</p>
+
+    <div class="about-copy">
+      <p>
+        ONE WEEK LEFT is a blues-rock project built on massive organic drums,
+        deep bass, raw guitars and a warm, low-mid voice.
+      </p>
+
+      <p>
+        Dark, melodic and physical, the music moves between slow-burning
+        tension and hard-driving momentum.
+      </p>
+
+      <p class="closing">
+        Some songs are for the ones still here.<br />
+        Others are for the ones we still reach for.
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about {
+    background: #050505;
+    color: #fff;
+    padding: 80px 44px 170px;
+  }
+
+  .about-inner {
+    width: min(1120px, 100%);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(180px, .65fr) 1.35fr;
+    gap: clamp(50px, 8vw, 130px);
+  }
+
+  .eyebrow {
+    margin: 7px 0 0;
+    color: #d71920;
+    font-size: 10px;
+    letter-spacing: .3em;
+  }
+
+  .about-copy {
+    max-width: 720px;
+  }
+
+  .about-copy p {
+    margin: 0 0 28px;
+    color: rgba(255,255,255,.72);
+    font-size: clamp(14px, 1.1vw, 17px);
+    line-height: 1.65;
+    font-weight: 300;
+  }
+
+  .about-copy .closing {
+    margin-top: 55px;
+    margin-bottom: 0;
+    color: #fff;
+    font-size: clamp(16px, 1.25vw, 18px);
+    line-height: 1.55;
+  }
+
+  @media (max-width: 800px) {
+    .about {
+      padding: 40px 20px 110px;
+    }
+
+    .about-inner {
+      grid-template-columns: 1fr;
+      gap: 35px;
+    }
+
+    .about-copy p {
+      font-size: 15px;
+    }
+
+    .about-copy .closing {
+      margin-top: 45px;
+      font-size: 17px;
+    }
+  }
+</style>

@@ -27,9 +27,9 @@ import { featuredRelease } from '../../data/releases';
       <p class="artist">{featuredRelease.artist}</p>
 
       <div class="platforms">
-        {featuredRelease.links.spotify && (
+        {featuredRelease.albumLinks.spotify && (
           <a
-            href={featuredRelease.links.spotify}
+            href={featuredRelease.albumLinks.spotify}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Listen to ONE WEEK LEFT on Spotify"
@@ -43,25 +43,10 @@ import { featuredRelease } from '../../data/releases';
           </a>
         )}
 
-        {featuredRelease.links.appleMusic && (
-          <a
-            href={featuredRelease.links.appleMusic}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Listen to ONE WEEK LEFT on Apple Music"
-            title="Apple Music"
-          >
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M21.5 3.2 9 5.7v10.1a3.5 3.5 0 1 0 1.5 2.9V9l9.5-1.9v6.7a3.5 3.5 0 1 0 1.5 2.9V3.2z"/>
-            </svg>
-            <span>APPLE MUSIC</span>
-            <span class="arrow" aria-hidden="true">↗</span>
-          </a>
-        )}
 
-        {featuredRelease.links.youtube && (
+        {featuredRelease.albumLinks.youtube && (
           <a
-            href={featuredRelease.links.youtube}
+            href={featuredRelease.albumLinks.youtube}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Listen to ONE WEEK LEFT on YouTube"
@@ -75,9 +60,9 @@ import { featuredRelease } from '../../data/releases';
           </a>
         )}
 
-        {featuredRelease.links.amazonMusic && (
+        {featuredRelease.albumLinks.amazonMusic && (
           <a
-            href={featuredRelease.links.amazonMusic}
+            href={featuredRelease.albumLinks.amazonMusic}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Listen to ONE WEEK LEFT on Amazon Music"
@@ -93,9 +78,9 @@ import { featuredRelease } from '../../data/releases';
           </a>
         )}
 
-        {featuredRelease.links.tidal && (
+        {featuredRelease.albumLinks.tidal && (
           <a
-            href={featuredRelease.links.tidal}
+            href={featuredRelease.albumLinks.tidal}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Listen to ONE WEEK LEFT on TIDAL"
@@ -109,21 +94,6 @@ import { featuredRelease } from '../../data/releases';
           </a>
         )}
 
-        {featuredRelease.links.deezer && (
-          <a
-            href={featuredRelease.links.deezer}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Listen to ONE WEEK LEFT on Deezer"
-            title="Deezer"
-          >
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M2 17h4v3H2v-3zm0-4h4v3H2v-3zm5 4h4v3H7v-3zm0-4h4v3H7v-3zm0-4h4v3H7V9zm5 8h4v3h-4v-3zm0-4h4v3h-4v-3zm0-4h4v3h-4V9zm5 8h5v3h-5v-3zm0-4h5v3h-5v-3z"/>
-            </svg>
-            <span>DEEZER</span>
-            <span class="arrow" aria-hidden="true">↗</span>
-          </a>
-        )}
       </div>
     </div>
 

@@ -12,4 +12,11 @@ export const featuredRelease = {
     tidal: 'https://tidal.com/artist/84609716',
     deezer: 'https://link.deezer.com/s/34sdXTiGMOGXX6RrG8mqn',
   },
+
+  albumLinks: {
+    spotify: 'https://open.spotify.com/album/0OidAnvh8qgRXmGD7Ehehl',
+    youtube: 'https://youtube.com/playlist?list=OLAK5uy_mwxT_JXtaK4sjzVoEyyrEMkU_kCRZCwsc',
+    amazonMusic: 'https://music.amazon.fr/albums/B0HKGWHB7P',
+    tidal: 'https://tidal.com/album/562865767',
+  },
 } as const;

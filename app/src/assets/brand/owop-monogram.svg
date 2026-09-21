@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 640 640"
+     role="img"
+     aria-labelledby="title"
+>
+  <title id="title">OWOP monogram</title>
+  <g transform="translate(-312 -304)"
+     fill="currentColor"
+     shape-rendering="geometricPrecision">
+
+  <path fill-rule="evenodd" d="
+    M 471.14 328.46
+    A 148.68 148.68 0 1 1 471.14 625.82
+    A 148.68 148.68 0 1 1 471.14 328.46
+    M 471.14 356.82
+    A 120.31 120.31 0 1 0 471.14 597.44
+    A 120.31 120.31 0 1 0 471.14 356.82
+  "/>
+  <path fill-rule="evenodd" d="
+    M 470.41 621.12
+    A 149.24 149.24 0 1 1 470.41 919.60
+    A 149.24 149.24 0 1 1 470.41 621.12
+    M 470.41 649.87
+    A 120.70 120.70 0 1 0 470.41 891.27
+    A 120.70 120.70 0 1 0 470.41 649.87
+  "/>
+  <path d="
+    M 604 332
+    L 716 619
+    L 774 482
+    L 831 620
+    L 943 332
+    L 911 332
+    L 831 541
+    L 774 406
+    L 716 540
+    L 635 332
+    Z
+  "/>
+  <path fill-rule="evenodd" d="
+    M 660 626
+    L 835 626
+    C 883 626 921 665 921 715
+    C 921 778 880 828 837 828
+    L 690 828
+    L 690 917
+    L 660 917
+    Z
+
+    M 690 655
+    L 830 655
+    C 865 655 893 687 893 728
+    C 893 768 866 800 831 800
+    L 690 800
+    Z
+  "/>
+
+  </g>
+</svg>

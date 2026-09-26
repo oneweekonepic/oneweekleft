@@ -137,21 +137,42 @@ import OwopMonogram from './brand/OwopMonogram.astro';
     }
 
     .footer-inner {
-      grid-template-columns: 1fr;
-      gap: 18px;
+      grid-template-columns: auto auto 1fr;
+      gap: 16px;
     }
 
     .footer-links {
-      justify-self: start;
-      gap: 24px;
+      justify-self: end;
+      gap: 16px;
     }
 
     .owop-link {
-      justify-self: start;
+      justify-self: center;
     }
 
     .copyright {
       justify-self: start;
+    }
+
+    .brand,
+    .copyright,
+    a {
+      font-size: 8px;
+      letter-spacing: .16em;
+    }
+
+    .footer-link {
+      gap: 5px;
+    }
+
+    .footer-link svg {
+      width: 15px;
+      height: 15px;
+    }
+
+    :global(.owop-mark) {
+      width: 22px;
+      height: 22px;
     }
   }
 </style>

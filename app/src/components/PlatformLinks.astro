@@ -3,6 +3,7 @@ import { featuredRelease } from '../data/releases';
 ---
 
 <div class="platform-links">
+  <div class="platform-primary">
 {featuredRelease.links.spotify && (
           <a
             href={featuredRelease.links.spotify}
@@ -38,6 +39,13 @@ import { featuredRelease } from '../data/releases';
             <span class="arrow" aria-hidden="true">↗</span>
           </a>
         )}
+
+  </div>
+
+  <details class="platform-more">
+    <summary>ALL <span aria-hidden="true">+</span></summary>
+
+    <div class="platform-secondary">
 
         {featuredRelease.links.youtube && (
           <a
@@ -114,10 +122,20 @@ import { featuredRelease } from '../data/releases';
             <span class="arrow" aria-hidden="true">↗</span>
           </a>
         )}
+    </div>
+  </details>
 </div>
 
 <style>
   .platform-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 34px;
+  }
+
+  .platform-primary,
+  .platform-secondary {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -157,18 +175,82 @@ import { featuredRelease } from '../data/releases';
     transform: translateY(-1px);
   }
 
+  .platform-more {
+    text-align: center;
+  }
+
+  .platform-more summary {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: rgba(255,255,255,.62);
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: .18em;
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+  }
+
+  .platform-more summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .platform-more[open] summary span {
+    transform: rotate(45deg);
+  }
+
+  .platform-more summary span {
+    display: inline-block;
+    transition: transform .2s ease;
+  }
+
+  .platform-secondary {
+    position: absolute;
+    left: 50%;
+    margin-top: 20px;
+    transform: translateX(-50%);
+    padding: 14px 20px;
+    background: rgba(0,0,0,.94);
+    border: 1px solid rgba(255,255,255,.08);
+  }
+
   @media (max-width: 700px) {
     .platform-links {
-      gap: 15px 20px;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .platform-primary {
+      gap: 28px;
     }
 
     .platform-links a {
-      font-size: 8px;
+      font-size: 11px;
     }
 
     .platform-links svg {
-      width: 19px;
-      height: 19px;
+      width: 23px;
+      height: 23px;
+    }
+
+    .platform-secondary {
+      position: static;
+      flex-direction: column;
+      gap: 18px;
+      margin-top: 20px;
+      transform: none;
+      padding: 0;
+      background: transparent;
+      border: 0;
+    }
+
+    .platform-secondary a {
+      min-height: 30px;
+    }
+
+    .platform-more summary {
+      font-size: 10px;
     }
   }
 </style>

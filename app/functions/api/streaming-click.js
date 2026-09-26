@@ -1,12 +1,3 @@
-const ALLOWED_PLATFORMS = new Set([
-  'spotify',
-  'apple_music',
-  'youtube',
-  'amazon_music',
-  'tidal',
-  'deezer',
-]);
-
 const clean = (value, maxLength = 100) =>
   typeof value === 'string'
     ? value.trim().slice(0, maxLength)
@@ -18,7 +9,7 @@ export async function onRequestPost(context) {
 
     const platform = clean(body.platform, 32);
 
-    if (!ALLOWED_PLATFORMS.has(platform)) {
+    if (!/^[a-z0-9_-]{1,32}$/.test(platform)) {
       return new Response(null, { status: 400 });
     }
 
@@ -31,6 +22,10 @@ export async function onRequestPost(context) {
         clean(body.utm_campaign),
         clean(context.request.cf?.country) || 'unknown',
         clean(context.request.cf?.city) || 'unknown',
+        clean(body.utm_content),
+        clean(body.language, 10),
+        clean(body.link_type, 20),
+        clean(body.device, 20),
       ],
       doubles: [1],
     });

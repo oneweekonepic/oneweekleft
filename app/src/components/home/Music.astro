@@ -30,6 +30,8 @@ import { featuredRelease } from '../../data/releases';
         {featuredRelease.albumLinks.spotify && (
           <a
             href={featuredRelease.albumLinks.spotify}
+            data-streaming-platform="spotify"
+            data-streaming-link-type="album"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Listen to ONE WEEK LEFT on Spotify"
@@ -47,6 +49,8 @@ import { featuredRelease } from '../../data/releases';
         {featuredRelease.albumLinks.youtube && (
           <a
             href={featuredRelease.albumLinks.youtube}
+            data-streaming-platform="youtube"
+            data-streaming-link-type="album"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Listen to ONE WEEK LEFT on YouTube"
@@ -63,6 +67,8 @@ import { featuredRelease } from '../../data/releases';
         {featuredRelease.albumLinks.amazonMusic && (
           <a
             href={featuredRelease.albumLinks.amazonMusic}
+            data-streaming-platform="amazon_music"
+            data-streaming-link-type="album"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Listen to ONE WEEK LEFT on Amazon Music"

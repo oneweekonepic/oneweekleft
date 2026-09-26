@@ -42,5 +42,61 @@ const socialImage = 'https://oneweekleft.music/images/still-moving.png';
     <Music />
     <About />
     <Footer />
+
+    <script>
+      const UTM_KEYS = [
+        'utm_source',
+        'utm_medium',
+        'utm_campaign',
+        'utm_content',
+      ];
+
+      const params = new URLSearchParams(window.location.search);
+
+      for (const key of UTM_KEYS) {
+        const value = params.get(key);
+
+        if (value) {
+          sessionStorage.setItem(`owl_${key}`, value);
+        }
+      }
+
+      const getDevice = () => {
+        const ua = navigator.userAgent;
+
+        if (/iPad|Tablet/i.test(ua)) return 'tablet';
+        if (/Mobi|Android|iPhone/i.test(ua)) return 'mobile';
+
+        return 'desktop';
+      };
+
+      document.addEventListener('click', (event) => {
+        const target = event.target;
+
+        if (!(target instanceof Element)) return;
+
+        const link = target.closest('[data-streaming-platform]');
+
+        if (!(link instanceof HTMLAnchorElement)) return;
+
+        const payload = {
+          platform: link.dataset.streamingPlatform || '',
+          link_type: link.dataset.streamingLinkType || '',
+          language: document.documentElement.lang || '',
+          device: getDevice(),
+          utm_source: sessionStorage.getItem('owl_utm_source') || '',
+          utm_medium: sessionStorage.getItem('owl_utm_medium') || '',
+          utm_campaign: sessionStorage.getItem('owl_utm_campaign') || '',
+          utm_content: sessionStorage.getItem('owl_utm_content') || '',
+        };
+
+        navigator.sendBeacon(
+          '/api/streaming-click',
+          new Blob([JSON.stringify(payload)], {
+            type: 'application/json',
+          }),
+        );
+      });
+    </script>
   </body>
 </html>

@@ -29,6 +29,8 @@ export async function onRequestPost(context) {
         clean(body.utm_source),
         clean(body.utm_medium),
         clean(body.utm_campaign),
+        clean(context.request.cf?.country) || 'unknown',
+        clean(context.request.cf?.city) || 'unknown',
       ],
       doubles: [1],
     });

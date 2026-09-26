@@ -15,6 +15,7 @@ export const featuredRelease = {
 
   albumLinks: {
     spotify: 'https://open.spotify.com/album/0OidAnvh8qgRXmGD7Ehehl',
+    appleMusic: 'https://music.apple.com/ch/album/still-moving/6814336209?l=fr-FR',
     youtube: 'https://youtube.com/playlist?list=OLAK5uy_mwxT_JXtaK4sjzVoEyyrEMkU_kCRZCwsc',
     amazonMusic: 'https://music.amazon.fr/albums/B0HKGWHB7P',
     tidal: 'https://tidal.com/album/562865767',

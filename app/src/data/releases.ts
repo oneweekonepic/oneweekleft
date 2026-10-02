@@ -20,4 +20,10 @@ export const featuredRelease = {
     amazonMusic: 'https://music.amazon.fr/albums/B0HKGWHB7P',
     tidal: 'https://tidal.com/album/562865767',
   },
+
+  purchaseLinks: {
+    itunes: 'https://music.apple.com/ch/album/still-moving/6814336209?app=itunes',
+    amazon: 'https://www.amazon.com/music/player/albums/B0HKGL8781',
+    qobuz: 'https://www.qobuz.com/gb-en/album/still-moving-one-week-left/r4ecxgo1yj0ii',
+  },
 } as const;

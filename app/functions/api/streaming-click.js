@@ -7,15 +7,19 @@ export async function onRequestPost(context) {
   try {
     const body = await context.request.json();
 
+    const event = clean(body.event, 32) || 'streaming_click';
     const platform = clean(body.platform, 32);
 
-    if (!/^[a-z0-9_-]{1,32}$/.test(platform)) {
+    if (
+      !['streaming_click', 'purchase_click'].includes(event) ||
+      !/^[a-z0-9_-]{1,32}$/.test(platform)
+    ) {
       return new Response(null, { status: 400 });
     }
 
     context.env.OWL_STREAMING_CLICKS.writeDataPoint({
       blobs: [
-        'streaming_click',
+        event,
         platform,
         clean(body.utm_source),
         clean(body.utm_medium),

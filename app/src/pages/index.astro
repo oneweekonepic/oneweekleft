@@ -77,13 +77,24 @@ const socialImage = 'https://oneweekleft.music/images/still-moving.png';
 
         if (!(target instanceof Element)) return;
 
-        const link = target.closest('[data-streaming-platform]');
+        const link = target.closest(
+          '[data-streaming-platform], [data-purchase-platform]',
+        );
 
         if (!(link instanceof HTMLAnchorElement)) return;
 
+        const isPurchase = Boolean(link.dataset.purchasePlatform);
+
         const payload = {
-          platform: link.dataset.streamingPlatform || '',
-          link_type: link.dataset.streamingLinkType || '',
+          event: isPurchase ? 'purchase_click' : 'streaming_click',
+          platform:
+            link.dataset.purchasePlatform ||
+            link.dataset.streamingPlatform ||
+            '',
+          link_type:
+            link.dataset.purchaseLinkType ||
+            link.dataset.streamingLinkType ||
+            '',
           language: document.documentElement.lang || '',
           device: getDevice(),
           utm_source: sessionStorage.getItem('owl_utm_source') || '',

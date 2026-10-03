@@ -5,12 +5,62 @@ import Music from '../components/home/Music.astro';
 import Video from '../components/home/Video.astro';
 import About from '../components/home/About.astro';
 import Footer from '../components/Footer.astro';
+import { featuredRelease } from '../data/releases';
 
-const title = 'ONE WEEK LEFT — Official Website';
+const title = 'ONE WEEK LEFT — Official Site | Blues-Rock Music';
 const description =
-  'ONE WEEK LEFT is a blues-rock project built on massive organic drums, deep bass, raw guitars and a warm, low-mid voice.';
+  'Official site of ONE WEEK LEFT, an AI-assisted blues-rock music project. Discover STILL MOVING, videos and official streaming links.';
 const canonical = 'https://oneweekleft.music/';
 const socialImage = 'https://oneweekleft.music/images/still-moving.png';
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebSite',
+      '@id': 'https://oneweekleft.music/#website',
+      url: canonical,
+      name: 'ONE WEEK LEFT',
+      about: {
+        '@id': 'https://oneweekleft.music/#artist',
+      },
+    },
+    {
+      '@type': 'MusicGroup',
+      '@id': 'https://oneweekleft.music/#artist',
+      name: 'ONE WEEK LEFT',
+      url: canonical,
+      description: 'AI-assisted blues-rock music project.',
+      genre: ['Blues rock', 'Rock'],
+      sameAs: [
+        featuredRelease.links.spotify,
+        featuredRelease.links.appleMusic,
+        featuredRelease.links.youtube,
+        featuredRelease.links.amazonMusic,
+        featuredRelease.links.tidal,
+        featuredRelease.links.deezer,
+        'https://www.instagram.com/oneweekleft.music/',
+      ],
+    },
+    {
+      '@type': 'MusicAlbum',
+      '@id': 'https://oneweekleft.music/#still-moving',
+      name: 'STILL MOVING',
+      byArtist: {
+        '@id': 'https://oneweekleft.music/#artist',
+      },
+      image: socialImage,
+      sameAs: [
+        featuredRelease.albumLinks.spotify,
+        featuredRelease.albumLinks.appleMusic,
+        featuredRelease.albumLinks.youtube,
+        featuredRelease.albumLinks.amazonMusic,
+        featuredRelease.albumLinks.tidal,
+        featuredRelease.purchaseLinks.qobuz,
+      ],
+    },
+  ],
+};
 ---
 
 <html lang="en">
@@ -36,6 +86,11 @@ const socialImage = 'https://oneweekleft.music/images/still-moving.png';
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={socialImage} />
+
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(structuredData)}
+    ></script>
   </head>
 
   <body>

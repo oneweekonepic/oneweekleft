@@ -20,7 +20,7 @@ import PlatformLinks from '../PlatformLinks.astro';
 
   <header class="hero-header">
     <a class="brand" href="/">
-      <span>ONE WEEK LEFT</span>
+      <h1 class="brand-title">ONE WEEK LEFT</h1>
       <span class="brand-line"></span>
     </a>
 
@@ -107,6 +107,12 @@ import PlatformLinks from '../PlatformLinks.astro';
     font-weight: 400;
     letter-spacing: .28em;
     white-space: nowrap;
+  }
+
+  .brand-title {
+    margin: 0;
+    font: inherit;
+    letter-spacing: inherit;
   }
 
   .brand-line {

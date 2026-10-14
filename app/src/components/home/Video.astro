@@ -3,6 +3,26 @@
     <div class="video-heading">
       <p class="eyebrow">VIDEO</p>
       <h2 id="video-title">THE WAY YOU MOVE</h2>
+
+      <div class="single-links">
+        <p>LISTEN TO THE FULL TRACK</p>
+        <div class="single-platforms">
+          <a
+            href="https://open.spotify.com/track/4UREaAcbe3eDXJDIlmyfOq"
+            data-streaming-platform="spotify"
+            data-streaming-link-type="single"
+            target="_blank"
+            rel="noopener noreferrer"
+          >SPOTIFY ↗</a>
+          <a
+            href="https://music.apple.com/ch/album/the-way-you-move/6813745870?i=6813745871"
+            data-streaming-platform="apple_music"
+            data-streaming-link-type="single"
+            target="_blank"
+            rel="noopener noreferrer"
+          >APPLE MUSIC ↗</a>
+        </div>
+      </div>
     </div>
 
     <div class="video-frame">
@@ -52,6 +72,35 @@
     line-height: 1.15;
     font-weight: 300;
     letter-spacing: .1em;
+  }
+
+  .single-links {
+    margin-top: 42px;
+  }
+
+  .single-links p {
+    margin: 0 0 18px;
+    color: rgba(255,255,255,.45);
+    font-size: 10px;
+    letter-spacing: .18em;
+  }
+
+  .single-platforms {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .single-platforms a {
+    color: rgba(255,255,255,.75);
+    font-size: 10px;
+    letter-spacing: .14em;
+    text-decoration: none;
+    transition: color .2s ease;
+  }
+
+  .single-platforms a:hover {
+    color: #fff;
   }
 
   .video-frame {

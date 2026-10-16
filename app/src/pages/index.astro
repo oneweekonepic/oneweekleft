@@ -115,6 +115,8 @@ const structuredData = {
 
         if (value) {
           sessionStorage.setItem(`owl_${key}`, value);
+        } else {
+          sessionStorage.removeItem(`owl_${key}`);
         }
       }
 

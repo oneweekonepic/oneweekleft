@@ -13,6 +13,19 @@ export const featuredRelease = {
     deezer: 'https://link.deezer.com/s/34sdXTiGMOGXX6RrG8mqn',
   },
 
+  featuredSingle: {
+    title: 'THE WAY YOU MOVE',
+    links: {
+      spotify: 'https://open.spotify.com/track/4UREaAcbe3eDXJDIlmyfOq',
+      appleMusic: 'https://music.apple.com/ch/album/the-way-you-move/6813745870?i=6813745871',
+      amazonMusic: 'https://music.amazon.fr/albums/B0HKBCQYZC',
+      youtubeMusic: 'https://music.youtube.com/watch?v=IMFP9uG54ic',
+      deezer: 'https://link.deezer.com/s/34H564fm3UxUpX5N4V3fq',
+      tidal: 'https://tidal.com/album/562378386',
+      qobuz: 'https://www.qobuz.com/gb-en/album/the-way-you-move-one-week-left/nw3pfghwsqnym',
+    },
+  },
+
   albumLinks: {
     spotify: 'https://open.spotify.com/album/0OidAnvh8qgRXmGD7Ehehl',
     appleMusic: 'https://music.apple.com/us/album/still-moving/6814336209',
